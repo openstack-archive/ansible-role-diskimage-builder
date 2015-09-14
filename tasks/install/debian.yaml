@@ -1,0 +1,9 @@
+---
+- name: Ensure build dependencies are installed.
+  apt: "pkg={{ item }} state=installed"
+  with_items: diskimage_builder_build_depends
+  when: diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip'
+
+- name: Ensure dependencies are installed.
+  apt: "pkg={{ item }} state=installed"
+  with_items: diskimage_builder_depends

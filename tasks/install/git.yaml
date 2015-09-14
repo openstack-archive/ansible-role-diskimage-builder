@@ -1,0 +1,10 @@
+---
+- name: Git clone diskimage-builder.
+  git:
+    dest: "{{ diskimage_builder_git_dest }}"
+    repo: "{{ diskimage_builder_git_uri }}"
+    version: "{{ diskimage_builder_git_version }}"
+
+- name: Pip install diskimage-builder from local git repo.
+  pip:
+    name: "file://{{ diskimage_builder_git_dest }}"

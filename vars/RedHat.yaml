@@ -1,0 +1,9 @@
+---
+__diskimage_builder_build_depends:
+  - git
+  - python-pip
+
+__diskimage_builder_depends:
+  - debootstrap
+  - kpartx
+  - qemu-img

@@ -1,0 +1,4 @@
+---
+- hosts: localhost
+  roles:
+    - { role: ansible-role-diskimage-builder, diskimage_builder_install_method: 'pip' }

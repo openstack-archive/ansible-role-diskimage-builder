@@ -1,0 +1,16 @@
+---
+# NOTE(pabelanger): This needs to be here for now, since we need python-pip.
+- name: Ensure EPEL is enabled.
+  yum:
+    pkg: epel-release
+    state: installed
+  when: diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip'
+
+- name: Ensure build dependencies are installed.
+  yum: "pkg={{ item }} state=installed"
+  with_items: diskimage_builder_build_depends
+  when: diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip'
+
+- name: Ensure dependencies are installed.
+  yum: "pkg={{ item }} state=installed"
+  with_items: diskimage_builder_depends

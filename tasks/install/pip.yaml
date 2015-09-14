@@ -1,0 +1,11 @@
+---
+- name: Install diskimage-builder using pip.
+  pip:
+    name: "{{ diskimage_builder_pip_name }}"
+  when: diskimage_builder_pip_version is none
+
+- name: Install diskimage-builder using pip.
+  pip:
+    name: "{{ diskimage_builder_pip_name }}"
+    version: "{{ diskimage_buidler_pip_version }}"
+  when: diskimage_builder_pip_version is not none

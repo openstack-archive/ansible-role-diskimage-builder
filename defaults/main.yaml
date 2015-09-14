@@ -1,0 +1,10 @@
+---
+# tasks/config.yaml
+diskimage_builder_git_dest: /opt/git/openstack/diskimage-builder
+diskimage_builder_git_uri: https://git.openstack.org/openstack/diskimage-builder
+diskimage_builder_git_version: master
+
+diskimage_builder_install_method: pip
+
+diskimage_builder_pip_name: diskimage-builder
+diskimage_builder_pip_version:
