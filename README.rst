@@ -1,8 +1,28 @@
-diskimage-builder
-=================
+==============================
+ansible-role-diskimage-builder
+==============================
+
+Ansible role to manage Diskimage Builder
+
+* License: Apache License, Version 2.0
+* Documentation: https://ansible-role-diskimage-builder.readthedocs.org
+* Source: https://git.openstack.org/cgit/openstack/ansible-role-diskimage-builder
+* Bugs: https://bugs.launchpad.net/ansible-role-diskimage-builder
+
+Description
+-----------
+
+Diskimage builder is a tool for building disk images, file system images and
+ramdisk images.
 
 Requirements
 ------------
+
+Packages
+~~~~~~~~
+
+Package repository index files should be up to date before using this role, we
+do not manage them.
 
 Role Variables
 --------------
@@ -13,21 +33,9 @@ Dependencies
 Example Playbook
 ----------------
 
-License
--------
-  Copyright 2015 Paul Belanger
+.. code-block:: yaml
 
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
-
-Author Information
-------------------
+    - name: Install diskimage-builder
+      hosts: nodepool
+      roles:
+        - ansible-role-diskimage-builder

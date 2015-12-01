@@ -15,7 +15,7 @@
 galaxy_info:
   author: Paul Belanger
   description: |
-    Diskimage-builder is a tool for building disk images, file system images
+    Diskimage builder is a tool for building disk images, file system images
     and ramdisk images.
   company: Red Hat, Inc.
   license: Apache
