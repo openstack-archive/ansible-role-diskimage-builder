@@ -19,5 +19,6 @@ diskimage_builder_git_version: master
 
 diskimage_builder_install_method: pip
 
+diskimage_builder_pip_extra_args: ""
 diskimage_builder_pip_name: diskimage-builder
 diskimage_builder_pip_version:
