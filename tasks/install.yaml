@@ -22,6 +22,11 @@
     diskimage_builder_depends: "{{ __diskimage_builder_depends | list }}"
   when: diskimage_builder_depends is not defined
 
+- name: Define diskimage_builder_pkg_name
+  set_fact:
+    diskimage_builder_pkg_name: "{{ __diskimage_builder_pkg_name }}"
+  when: diskimage_builder_pkg_name is not defined
+
 - include: install/debian.yaml
   when: ansible_os_family == 'Debian'
 
