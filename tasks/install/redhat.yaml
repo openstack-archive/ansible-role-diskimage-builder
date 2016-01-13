@@ -20,10 +20,21 @@
   when: diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip'
 
 - name: Ensure build dependencies are installed.
-  yum: "pkg={{ item }} state=installed"
+  yum:
+    pkg: "{{ item }}"
+    state: installed
   with_items: diskimage_builder_build_depends
   when: diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip'
 
 - name: Ensure dependencies are installed.
-  yum: "pkg={{ item }} state=installed"
+  yum:
+    pkg: "{{ item }}"
+    state: installed
   with_items: diskimage_builder_depends
+  when: diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip'
+
+- name: Install diskimage-builder using yum.
+  yum:
+    pkg: "{{ diskimage_builder_pkg_name }}"
+    state: installed
+  when: diskimage_builder_install_method == 'pkg'

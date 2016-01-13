@@ -20,3 +20,5 @@ __diskimage_builder_depends:
   - debootstrap
   - kpartx
   - qemu-img
+
+__diskimage_builder_pkg_name: diskimage-builder

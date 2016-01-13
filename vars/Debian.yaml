@@ -21,3 +21,5 @@ __diskimage_builder_depends:
   - kpartx
   - qemu-utils
   - uuid-runtime
+
+__diskimage_builder_pkg_name: python-diskimage-builder
