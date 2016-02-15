@@ -14,5 +14,5 @@
 ---
 - name: Install diskimage-builder from package.
   package:
-    pkg: "{{ diskimage_builder_pkg_name }}"
+    name: "{{ diskimage_builder_pkg_name }}"
     state: installed
