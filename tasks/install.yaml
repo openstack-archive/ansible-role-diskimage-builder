@@ -55,8 +55,4 @@
     state: installed
   when: diskimage_builder_install_method == 'pkg'
 
-- include: install/git.yaml
-  when: diskimage_builder_install_method == 'git'
-
-- include: install/pip.yaml
-  when: diskimage_builder_install_method == 'pip'
+- include: "install/{{ diskimage_builder_install_method }}.yaml"
