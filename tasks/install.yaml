@@ -49,10 +49,4 @@
   with_items: diskimage_builder_depends
   when: diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip'
 
-- name: Install diskimage-builder from OS package.
-  package:
-    pkg: "{{ diskimage_builder_pkg_name }}"
-    state: installed
-  when: diskimage_builder_install_method == 'pkg'
-
 - include: "install/{{ diskimage_builder_install_method }}.yaml"
