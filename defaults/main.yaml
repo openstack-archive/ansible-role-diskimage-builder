@@ -13,11 +13,11 @@
 # under the License.
 ---
 # tasks/config.yaml
-diskimage_builder_git_dest: /opt/git/openstack/diskimage-builder
+diskimage_builder_git_dest: /opt/git/ansible-role-diskimage-builder/openstack/diskimage-builder
 diskimage_builder_git_uri: https://git.openstack.org/openstack/diskimage-builder
 diskimage_builder_git_version: master
 
-diskimage_builder_install_method: pip
+diskimage_builder_install_method: git
 
 diskimage_builder_pip_extra_args: ""
 diskimage_builder_pip_name: diskimage-builder
