@@ -20,5 +20,5 @@
 
 - name: Pip install diskimage-builder from local git repo.
   pip:
-    extra_args: "{{ diskimage_builder_pip_extra_args }}"
     name: "file://{{ diskimage_builder_git_dest }}"
+    extra_args: "{{ diskimage_builder_pip_extra_args|default(omit) }}"

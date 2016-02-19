@@ -14,13 +14,6 @@
 ---
 - name: Install diskimage-builder using pip.
   pip:
-    extra_args: "{{ diskimage_builder_pip_extra_args }}"
+    extra_args: "{{ diskimage_builder_pip_extra_args|default(omit) }}"
     name: "{{ diskimage_builder_pip_name }}"
-  when: diskimage_builder_pip_version is none
-
-- name: Install diskimage-builder using pip.
-  pip:
-    extra_args: "{{ diskimage_builder_pip_extra_args }}"
-    name: "{{ diskimage_builder_pip_name }}"
-    version: "{{ diskimage_builder_pip_version }}"
-  when: diskimage_builder_pip_version is not none
+    version: "{{ diskimage_builder_pip_version|default(omit) }}"
