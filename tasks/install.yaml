@@ -39,14 +39,14 @@
   package:
     name: "{{ item }}"
     state: installed
-  with_items: diskimage_builder_build_depends
+  with_items: "{{ diskimage_builder_build_depends }}"
   when: diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip'
 
 - name: Ensure dependencies are installed.
   package:
     name: "{{ item }}"
     state: installed
-  with_items: diskimage_builder_depends
+  with_items: "{{ diskimage_builder_depends }}"
   when: diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip'
 
 - include: "install/{{ diskimage_builder_install_method }}.yaml"
