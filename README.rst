@@ -2,7 +2,7 @@
 ansible-role-diskimage-builder
 ==============================
 
-Ansible role to manage Diskimage Builder
+Ansible role to manage Diskimage Builder!
 
 * License: Apache License, Version 2.0
 * Documentation: https://ansible-role-diskimage-builder.readthedocs.org
