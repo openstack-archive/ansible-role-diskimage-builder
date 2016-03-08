@@ -21,4 +21,4 @@ __diskimage_builder_depends:
   - kpartx
   - qemu-img
 
-__diskimage_builder_pkg_name: diskimage-builder
+__diskimage_builder_package_name: diskimage-builder

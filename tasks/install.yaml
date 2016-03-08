@@ -22,10 +22,10 @@
     diskimage_builder_depends: "{{ __diskimage_builder_depends | list }}"
   when: diskimage_builder_depends is not defined
 
-- name: Define diskimage_builder_pkg_name
+- name: Define diskimage_builder_package_name
   set_fact:
-    diskimage_builder_pkg_name: "{{ __diskimage_builder_pkg_name }}"
-  when: diskimage_builder_pkg_name is not defined
+    diskimage_builder_package_name: "{{ __diskimage_builder_package_name }}"
+  when: diskimage_builder_package_name is not defined
 
 # NOTE(pabelanger): This needs to be here for now, since we need python-pip.
 - name: Ensure EPEL is enabled.
