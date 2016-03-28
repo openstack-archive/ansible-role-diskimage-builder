@@ -1,2 +1,0 @@
-# Dependencies needed by OpenStack CI.
-curl
