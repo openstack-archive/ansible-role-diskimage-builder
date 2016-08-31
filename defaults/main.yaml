@@ -22,3 +22,4 @@ diskimage_builder_install_method: git
 diskimage_builder_pip_name: diskimage-builder
 # diskimage_builder_pip_extra_args:
 # diskimage_builder_pip_version:
+# diskimage_builder_pip_virtualenv:
