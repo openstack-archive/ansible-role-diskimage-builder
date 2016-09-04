@@ -27,14 +27,6 @@
     diskimage_builder_package_name: "{{ __diskimage_builder_package_name }}"
   when: diskimage_builder_package_name is not defined
 
-# NOTE(pabelanger): This needs to be here for now, since we need python-pip.
-- name: Ensure EPEL is enabled.
-  package:
-    name: epel-release
-    state: installed
-  when: (diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip') and
-        ansible_os_family == 'RedHat'
-
 - name: Ensure build dependencies are installed.
   package:
     name: "{{ item }}"

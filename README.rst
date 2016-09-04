@@ -18,6 +18,8 @@ ramdisk images.
 Requirements
 ------------
 
+See `bindep.txt` for role dependencies.
+
 Packages
 ~~~~~~~~
 
