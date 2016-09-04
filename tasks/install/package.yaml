@@ -13,6 +13,7 @@
 # under the License.
 ---
 - name: Install diskimage-builder from package.
+  become: yes
   package:
     name: "{{ diskimage_builder_package_name }}"
     state: installed

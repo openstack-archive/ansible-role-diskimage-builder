@@ -13,12 +13,14 @@
 # under the License.
 ---
 - name: Git clone diskimage-builder.
+  become: yes
   git:
     dest: "{{ diskimage_builder_git_dest }}"
     repo: "{{ diskimage_builder_git_uri }}"
     version: "{{ diskimage_builder_git_version }}"
 
 - name: Pip install diskimage-builder from local git repo.
+  become: yes
   pip:
     extra_args: "{{ diskimage_builder_pip_extra_args|default(omit) }}"
     name: "file://{{ diskimage_builder_git_dest }}"
