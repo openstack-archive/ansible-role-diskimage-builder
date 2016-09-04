@@ -25,3 +25,15 @@
 
   roles:
     - "{{ rolename }}"
+
+  post_tasks:
+    - name: Register diskimage_builder_git_dest_stat.
+      stat:
+        path: /opt/ansible-role-diskimage-builder/git/openstack/diskimage-builder
+      register: diskimage_builder_git_dest_stat
+
+    - name: Assert diskimage_builder_git_dest tests.
+      assert:
+        that:
+          - diskimage_builder_git_dest_stat.stat.exists
+          - diskimage_builder_git_dest_stat.stat.isdir
