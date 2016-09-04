@@ -17,7 +17,7 @@ diskimage_builder_task_manager:
   - install
 
 # tasks/config.yaml
-diskimage_builder_git_dest: /opt/git/ansible-role-diskimage-builder/openstack/diskimage-builder
+diskimage_builder_git_dest: /opt/ansible-role-diskimage-builder/openstack/diskimage-builder
 diskimage_builder_git_uri: https://git.openstack.org/openstack/diskimage-builder
 diskimage_builder_git_version: master
 
