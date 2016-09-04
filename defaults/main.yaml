@@ -12,6 +12,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 ---
+# tasks/main.yaml
+diskimage_builder_task_manager:
+  - install
+
 # tasks/config.yaml
 diskimage_builder_git_dest: /opt/git/ansible-role-diskimage-builder/openstack/diskimage-builder
 diskimage_builder_git_uri: https://git.openstack.org/openstack/diskimage-builder

@@ -13,6 +13,7 @@
 # under the License.
 ---
 - name: Install diskimage-builder using pip.
+  become: yes
   pip:
     extra_args: "{{ diskimage_builder_pip_extra_args|default(omit) }}"
     name: "{{ diskimage_builder_pip_name }}"
