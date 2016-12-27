@@ -17,6 +17,7 @@ __diskimage_builder_build_depends:
 
 __diskimage_builder_depends:
   - debootstrap
+  - gnupg
   - kpartx
   - qemu-img
   - yum-utils
