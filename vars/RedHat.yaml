@@ -16,6 +16,7 @@ __diskimage_builder_build_depends:
   - git
 
 __diskimage_builder_depends:
+  - curl
   - debootstrap
   - gnupg
   - kpartx
