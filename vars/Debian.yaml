@@ -16,8 +16,10 @@ __diskimage_builder_build_depends:
   - git
 
 __diskimage_builder_depends:
+  - curl
   - debootstrap
   - kpartx
+  - parted
   - qemu-utils
   - uuid-runtime
   - yum-utils
