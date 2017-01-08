@@ -16,8 +16,9 @@
   become: yes
   git:
     dest: "{{ diskimage_builder_git_dest }}"
+    refspec: "{{ diskimage_builder_git_refspec|default(omit) }}"
     repo: "{{ diskimage_builder_git_uri }}"
-    version: "{{ diskimage_builder_git_version }}"
+    version: "{{ diskimage_builder_git_version|default(omit) }}"
 
 - name: Pip install diskimage-builder from local git repo.
   become: yes
