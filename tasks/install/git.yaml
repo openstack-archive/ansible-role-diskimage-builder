@@ -20,9 +20,8 @@
     repo: "{{ diskimage_builder_git_uri }}"
     version: "{{ diskimage_builder_git_version|default(omit) }}"
 
-- name: Pip install diskimage-builder from local git repo.
-  become: yes
-  pip:
-    extra_args: "{{ diskimage_builder_pip_extra_args|default(omit) }}"
-    name: "file://{{ diskimage_builder_git_dest }}"
-    virtualenv: "{{ diskimage_builder_pip_virtualenv|default(omit) }}"
+- name: Set diskimage_builder_pip_name to local git repo.
+  set_fact:
+    diskimage_builder_pip_name: "file://{{ diskimage_builder_git_dest }}"
+
+- include: pip.yaml
