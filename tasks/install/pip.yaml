@@ -18,4 +18,5 @@
     extra_args: "{{ diskimage_builder_pip_extra_args|default(omit) }}"
     name: "{{ diskimage_builder_pip_name }}"
     version: "{{ diskimage_builder_pip_version|default(omit) }}"
+    virtualenv_python: "{{ diskimage_builder_pip_virtualenv_python|default(omit) }}"
     virtualenv: "{{ diskimage_builder_pip_virtualenv|default(omit) }}"
