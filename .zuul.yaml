@@ -1,0 +1,40 @@
+- job:
+    name: ansible-role-diskimage-builder
+    run: tests/test.yaml
+    required-projects:
+      - name: openstack/diskimage-builder
+    roles:
+      - zuul: openstack/ansible-role-diskimage-builder
+
+- job:
+    name: ansible-role-diskimage-builder-centos-7
+    parent: ansible-role-diskimage-builder
+    nodeset: centos-7
+
+- job:
+    name: ansible-role-diskimage-builder-fedora-26
+    parent: ansible-role-diskimage-builder
+    nodeset: fedora-26
+
+- job:
+    name: ansible-role-diskimage-builder-ubuntu-xenial
+    parent: ansible-role-diskimage-builder
+    nodeset: ubuntu-xenial
+
+- project:
+    name: openstack/ansible-role-diskimage-builder
+    templates:
+      - windmill-jobs-fedora-26
+      - windmill-jobs-xenial
+    check:
+      jobs:
+        - ansible-role-diskimage-builder-centos-7
+        - ansible-role-diskimage-builder-fedora-26
+        - ansible-role-diskimage-builder-ubuntu-xenial
+        - tox-linters
+    gate:
+      jobs:
+        - ansible-role-diskimage-builder-centos-7
+        - ansible-role-diskimage-builder-fedora-26
+        - ansible-role-diskimage-builder-ubuntu-xenial
+        - tox-linters
