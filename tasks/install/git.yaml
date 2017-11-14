@@ -18,6 +18,7 @@
     dest: "{{ diskimage_builder_git_dest }}"
     refspec: "{{ diskimage_builder_git_refspec|default(omit) }}"
     repo: "{{ diskimage_builder_git_uri }}"
+    update: "{{ diskimage_builder_git_update|default(omit) }}"
     version: "{{ diskimage_builder_git_version|default(omit) }}"
 
 - name: Set diskimage_builder_pip_name to local git repo.
