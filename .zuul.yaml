@@ -22,7 +22,6 @@
     nodeset: ubuntu-xenial
 
 - project:
-    name: openstack/ansible-role-diskimage-builder
     templates:
       - windmill-jobs-fedora-26
       - windmill-jobs-xenial
