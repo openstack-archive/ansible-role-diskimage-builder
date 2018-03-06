@@ -17,6 +17,11 @@
     nodeset: fedora-27
 
 - job:
+    name: ansible-role-diskimage-builder-ubuntu-bionic
+    parent: ansible-role-diskimage-builder
+    nodeset: ubuntu-bionic
+
+- job:
     name: ansible-role-diskimage-builder-ubuntu-xenial
     parent: ansible-role-diskimage-builder
     nodeset: ubuntu-xenial
@@ -29,6 +34,7 @@
       jobs:
         - ansible-role-diskimage-builder-centos-7
         - ansible-role-diskimage-builder-fedora-27
+        - ansible-role-diskimage-builder-ubuntu-bionic
         - ansible-role-diskimage-builder-ubuntu-xenial
         - tox-linters
     gate:
