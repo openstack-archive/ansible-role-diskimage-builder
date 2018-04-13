@@ -7,11 +7,6 @@
       - zuul: openstack/ansible-role-diskimage-builder
 
 - job:
-    name: ansible-role-diskimage-builder-centos-7
-    parent: ansible-role-diskimage-builder
-    nodeset: centos-7
-
-- job:
     name: ansible-role-diskimage-builder-fedora-27
     parent: ansible-role-diskimage-builder
     nodeset: fedora-27
@@ -33,14 +28,12 @@
       - windmill-jobs-xenial
     check:
       jobs:
-        - ansible-role-diskimage-builder-centos-7
         - ansible-role-diskimage-builder-fedora-27
         - ansible-role-diskimage-builder-ubuntu-bionic
         - ansible-role-diskimage-builder-ubuntu-xenial
         - tox-linters
     gate:
       jobs:
-        - ansible-role-diskimage-builder-centos-7
         - ansible-role-diskimage-builder-fedora-27
         - ansible-role-diskimage-builder-ubuntu-xenial
         - tox-linters

@@ -17,19 +17,6 @@
     diskimage_builder_git_update: false
     rolename: ansible-role-diskimage-builder
 
-  pre_tasks:
-    # NOTE(pabelanger): Manually install EPEL dependencies as not to keep EPEL
-    # enabled.
-    - name: Manually install EPEL dependencies
-      become: yes
-      yum:
-        name: "{{ item }}"
-        enablerepo: epel
-        state: present
-      when: ansible_distribution == "CentOS"
-      with_items:
-        - debootstrap
-
   roles:
     - "{{ rolename }}"
 
