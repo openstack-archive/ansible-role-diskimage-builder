@@ -14,7 +14,6 @@
 ---
 - hosts: all
   vars:
-    diskimage_builder_git_update: false
     rolename: ansible-role-diskimage-builder
 
   roles:
@@ -25,9 +24,11 @@
       stat:
         path: /home/zuul/src/git.openstack.org/openstack/diskimage-builder
       register: diskimage_builder_git_dest_stat
+      when: diskimage_builder_install_method == 'git'
 
     - name: Assert diskimage_builder_git_dest tests.
       assert:
         that:
           - diskimage_builder_git_dest_stat.stat.exists
           - diskimage_builder_git_dest_stat.stat.isdir
+      when: diskimage_builder_install_method == 'git'
