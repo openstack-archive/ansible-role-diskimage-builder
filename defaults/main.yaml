@@ -23,7 +23,7 @@ diskimage_builder_git_version: master
 # diskimage_builder_git_refspec:
 # diskimage_builder_git_update:
 
-diskimage_builder_install_method: git
+diskimage_builder_install_method: pip
 
 diskimage_builder_pip_name: diskimage-builder
 # diskimage_builder_pip_extra_args:
