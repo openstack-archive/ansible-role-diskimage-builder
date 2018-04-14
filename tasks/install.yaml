@@ -30,17 +30,15 @@
 - name: Ensure build dependencies are installed.
   become: yes
   package:
-    name: "{{ item }}"
+    name: "{{ diskimage_builder_build_depends }}"
     state: installed
-  with_items: "{{ diskimage_builder_build_depends }}"
   when: diskimage_builder_install_method == 'git'
 
 - name: Ensure dependencies are installed.
   become: yes
   package:
-    name: "{{ item }}"
+    name: "{{ diskimage_builder_depends }}"
     state: installed
-  with_items: "{{ diskimage_builder_depends }}"
   when: diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip'
 
 - include: "install/{{ diskimage_builder_install_method }}.yaml"
