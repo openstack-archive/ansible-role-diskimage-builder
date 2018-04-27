@@ -69,7 +69,9 @@
     gate:
       jobs:
         - ansible-role-diskimage-builder-fedora-27
+        - ansible-role-diskimage-builder-ubuntu-bionic
         - ansible-role-diskimage-builder-ubuntu-xenial
         - ansible-role-diskimage-builder-src-fedora-27
+        - ansible-role-diskimage-builder-src-ubuntu-bionic
         - ansible-role-diskimage-builder-src-ubuntu-xenial
         - tox-linters
