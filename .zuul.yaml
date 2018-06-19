@@ -13,9 +13,9 @@
       diskimage_builder_install_method: pip
 
 - job:
-    name: ansible-role-diskimage-builder-fedora-27
+    name: ansible-role-diskimage-builder-fedora-latest
     parent: ansible-role-diskimage-builder
-    nodeset: fedora-27
+    nodeset: fedora-latest
 
 - job:
     name: ansible-role-diskimage-builder-ubuntu-bionic
@@ -38,9 +38,9 @@
       diskimage_builder_install_method: git
 
 - job:
-    name: ansible-role-diskimage-builder-src-fedora-27
+    name: ansible-role-diskimage-builder-src-fedora-latest
     parent: ansible-role-diskimage-builder-src
-    nodeset: fedora-27
+    nodeset: fedora-latest
 
 - job:
     name: ansible-role-diskimage-builder-src-ubuntu-bionic
@@ -59,19 +59,19 @@
       - windmill-jobs-xenial
     check:
       jobs:
-        - ansible-role-diskimage-builder-fedora-27
+        - ansible-role-diskimage-builder-fedora-latest
         - ansible-role-diskimage-builder-ubuntu-bionic
         - ansible-role-diskimage-builder-ubuntu-xenial
-        - ansible-role-diskimage-builder-src-fedora-27
+        - ansible-role-diskimage-builder-src-fedora-latest
         - ansible-role-diskimage-builder-src-ubuntu-bionic
         - ansible-role-diskimage-builder-src-ubuntu-xenial
         - tox-linters
     gate:
       jobs:
-        - ansible-role-diskimage-builder-fedora-27
+        - ansible-role-diskimage-builder-fedora-latest
         - ansible-role-diskimage-builder-ubuntu-bionic
         - ansible-role-diskimage-builder-ubuntu-xenial
-        - ansible-role-diskimage-builder-src-fedora-27
+        - ansible-role-diskimage-builder-src-fedora-latest
         - ansible-role-diskimage-builder-src-ubuntu-bionic
         - ansible-role-diskimage-builder-src-ubuntu-xenial
         - tox-linters
