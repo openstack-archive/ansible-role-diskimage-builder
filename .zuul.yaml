@@ -54,7 +54,7 @@
 
 - project:
     templates:
-      - windmill-jobs-fedora-27
+      - windmill-jobs-fedora-latest
       - windmill-jobs-bionic
       - windmill-jobs-xenial
     check:
