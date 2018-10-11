@@ -24,4 +24,4 @@
   set_fact:
     diskimage_builder_pip_name: "file://{{ diskimage_builder_git_dest }}"
 
-- include: pip.yaml
+- include_tasks: pip.yaml

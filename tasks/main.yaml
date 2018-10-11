@@ -15,7 +15,7 @@
 - name: Include OS-specific variables.
   include_vars: "{{ ansible_os_family }}.yaml"
 
-- include: "{{ diskimage_builder_task }}.yaml"
+- include_tasks: "{{ diskimage_builder_task }}.yaml"
   with_items: "{{ diskimage_builder_task_manager }}"
   loop_control:
     loop_var: diskimage_builder_task
