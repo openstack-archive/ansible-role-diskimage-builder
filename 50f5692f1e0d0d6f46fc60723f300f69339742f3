@@ -1,0 +1,8 @@
+Code-Review+2: Paul Belanger <pabelanger@redhat.com>
+Workflow+1: Paul Belanger <pabelanger@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 04 Dec 2018 03:58:08 +0000
+Reviewed-on: https://review.openstack.org/621895
+Project: openstack/ansible-role-diskimage-builder
+Branch: refs/heads/master
