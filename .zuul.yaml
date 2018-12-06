@@ -22,11 +22,6 @@
     parent: ansible-role-diskimage-builder
     nodeset: ubuntu-bionic
 
-- job:
-    name: ansible-role-diskimage-builder-ubuntu-xenial
-    parent: ansible-role-diskimage-builder
-    nodeset: ubuntu-xenial
-
 # Testing for diskimage_builder_install_method: git
 - job:
     name: ansible-role-diskimage-builder-src
@@ -47,31 +42,21 @@
     parent: ansible-role-diskimage-builder-src
     nodeset: ubuntu-bionic
 
-- job:
-    name: ansible-role-diskimage-builder-src-ubuntu-xenial
-    parent: ansible-role-diskimage-builder-src
-    nodeset: ubuntu-xenial
-
 - project:
     templates:
       - windmill-jobs-fedora-latest
       - windmill-jobs-bionic
-      - windmill-jobs-xenial
     check:
       jobs:
         - ansible-role-diskimage-builder-fedora-latest
         - ansible-role-diskimage-builder-ubuntu-bionic
-        - ansible-role-diskimage-builder-ubuntu-xenial
         - ansible-role-diskimage-builder-src-fedora-latest
         - ansible-role-diskimage-builder-src-ubuntu-bionic
-        - ansible-role-diskimage-builder-src-ubuntu-xenial
         - tox-linters
     gate:
       jobs:
         - ansible-role-diskimage-builder-fedora-latest
         - ansible-role-diskimage-builder-ubuntu-bionic
-        - ansible-role-diskimage-builder-ubuntu-xenial
         - ansible-role-diskimage-builder-src-fedora-latest
         - ansible-role-diskimage-builder-src-ubuntu-bionic
-        - ansible-role-diskimage-builder-src-ubuntu-xenial
         - tox-linters
