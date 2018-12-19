@@ -12,7 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 ---
-- name: Git clone diskimage-builder.
+- name: Git clone diskimage-builder
   git:
     dest: "{{ diskimage_builder_git_dest }}"
     refspec: "{{ diskimage_builder_git_refspec|default(omit) }}"
@@ -20,7 +20,7 @@
     update: "{{ diskimage_builder_git_update|default(omit) }}"
     version: "{{ diskimage_builder_git_version|default(omit) }}"
 
-- name: Set diskimage_builder_pip_name to local git repo.
+- name: Set diskimage_builder_pip_name to local git repo
   set_fact:
     diskimage_builder_pip_name: "file://{{ diskimage_builder_git_dest }}"
 

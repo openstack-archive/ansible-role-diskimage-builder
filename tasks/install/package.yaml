@@ -12,7 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 ---
-- name: Install diskimage-builder from package.
+- name: Install diskimage-builder from package
   become: yes
   package:
     name: "{{ diskimage_builder_package_name }}"
