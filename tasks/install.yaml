@@ -27,18 +27,18 @@
     diskimage_builder_package_name: "{{ __diskimage_builder_package_name }}"
   when: diskimage_builder_package_name is not defined
 
-- name: Ensure build dependencies are installed.
+- name: Ensure build dependencies are present.
   become: yes
   package:
     name: "{{ diskimage_builder_build_depends }}"
-    state: installed
+    state: present
   when: diskimage_builder_install_method == 'git'
 
-- name: Ensure dependencies are installed.
+- name: Ensure dependencies are present.
   become: yes
   package:
     name: "{{ diskimage_builder_depends }}"
-    state: installed
+    state: present
   when: diskimage_builder_install_method == 'git' or diskimage_builder_install_method == 'pip'
 
 - include: "install/{{ diskimage_builder_install_method }}.yaml"

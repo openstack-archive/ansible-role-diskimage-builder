@@ -16,4 +16,4 @@
   become: yes
   package:
     name: "{{ diskimage_builder_package_name }}"
-    state: installed
+    state: present
